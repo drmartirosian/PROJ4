@@ -28,6 +28,7 @@ class App extends Component {
         </header>
         <div>
         <Scooter/>
+
         <Switch>
           <Route exact path='/' render={() => <HomePage test={this.state.test} />} />
           <Route exact path='/api/signup' render={() => <SignupPage />} />
