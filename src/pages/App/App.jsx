@@ -11,28 +11,28 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      test: Test
+      name: String
     };
   }
   render() {
     return (
       <div>
         <nav>
-          <th>Home</th>
+          {/* <th>Home</th>
           <th>About</th>
-          <th>LOGIN/OUT</th>
+          <th>LOGIN/OUT</th> */}
         </nav>
         <header>
           <h1>Tres-Commas</h1>
         </header>
-        <body>
+        <div>
         <Scooter/>
         <Switch>
           <Route exact path='/' render={() =>
           <HomePage test={this.state.test} />
           } />
         </Switch>
-        </body>
+        </div>
         <footer>FOOTER CONTENT HERE</footer>
       </div>
     );
