@@ -1,14 +1,11 @@
-const User = require('../models/User')
+const User = require('../models/user');
 const jwt = require('jsonwebtoken');
-// DOT ENV SECRET
 const SECRET = process.env.SECRET;
 
 module.exports = {
-  index,
-  create,
   signup,
-  login,
-}
+  login
+};
 
 async function login(req, res) {
   try {
@@ -38,28 +35,6 @@ async function signup(req, res) {
     res.status(400).json(err);
   }
 }
-
-
-async function index(req, res) {
-  try {
-      const userIndex = await User.find({});
-      res.status(201).json(userIndex);
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  }
-
-async function create(req, res){
-    const user = new User(req.body);
-    try {
-        await user.save()
-        req.status(201).json(user)
-    }
-    catch(err) {
-        res.status(400).json(err)
-    }
-}
-
 
 
 /*--- helper functions ---*/

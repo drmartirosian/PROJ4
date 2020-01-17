@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+// import './LoginPage.css';
 import userService from '../../utils/userService';
 
 class LoginPage extends Component {
-
+  
   state = {
     email: '',
     pw: ''
@@ -11,7 +12,6 @@ class LoginPage extends Component {
 
   handleChange = (e) => {
     this.setState({
-      // Using ES2015 Computed Property Names
       [e.target.name]: e.target.value
     });
   }
@@ -25,7 +25,7 @@ class LoginPage extends Component {
       // Successfully signed up - show GamePage
       this.props.history.push('/');
     } catch (err) {
-      // Use a modal or toast in your apps instead of alert
+      // Invalid user data (probably duplicate email)
       alert('Invalid Credentials!');
     }
   }
