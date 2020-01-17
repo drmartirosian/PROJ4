@@ -4,6 +4,7 @@ const usersCtrl = require("../../controllers/users");
 
 router.get("/users", usersCtrl.index);
 router.post("/users", usersCtrl.create);
+/*---------- Public Routes ----------*/
 router.post('/signup', usersCtrl.signup);
 router.post('/login', usersCtrl.login);
 

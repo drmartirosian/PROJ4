@@ -4,10 +4,10 @@ const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
 module.exports = {
-    index,
-    create,
-    signup,
-    login,
+  index,
+  create,
+  signup,
+  login,
 }
 
 async function login(req, res) {
