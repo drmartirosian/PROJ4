@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
+import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <NavBar/>
         <header >HEADER</header>
         <Switch>
           <Route exact path='/signup' render={({ history }) => 
