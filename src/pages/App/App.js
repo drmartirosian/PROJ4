@@ -10,10 +10,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      // Initialize user if there's a token, otherwise null
       user: userService.getUser()
     };
   }
+
+
+
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
