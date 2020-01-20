@@ -3,34 +3,36 @@ import { Route, Switch } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
-import NavBar from '../../components/NavBar/NavBar';
+import HomePage from '../HomePage/HomePage';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      // Initialize user if there's a token, otherwise null
       user: userService.getUser()
     };
   }
-
   handleLogout = () => {
     userService.logout();
-    this.setState({user: null});
+    this.setState({ user: null });
   }
-
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
   }
 
-  /*--- Lifecycle Methods ---*/
-
   render() {
+
     return (
       <div>
-        <NavBar/>
-        <header >HEADER</header>
         <Switch>
+          <Route exact path='/' render={() =>
+            <HomePage
+              handleLogout={this.handleLogout}
+              user={this.state.user}
+            />
+          }/>
           <Route exact path='/signup' render={({ history }) => 
             <SignupPage
               history={history}
