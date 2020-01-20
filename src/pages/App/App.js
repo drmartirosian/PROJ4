@@ -4,12 +4,14 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import HomePage from '../HomePage/HomePage';
+import CartPage from '../CartPage/CartPage';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      cart: [],
       user: userService.getUser()
     };
   }
@@ -31,6 +33,12 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={() =>
             <HomePage
+              handleLogout={this.handleLogout}
+              user={this.state.user}
+            />
+          }/>
+           <Route exact path='/Cart' render={() =>
+            <CartPage
               handleLogout={this.handleLogout}
               user={this.state.user}
             />
