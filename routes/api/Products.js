@@ -1,18 +1,15 @@
-const express = require('express');
-const router = express.Router();
-const productsCtrl = require('../../controllers/products');
+var express = require('express');
+var router = express.Router();
+var productCtrl = require('../../controllers/products');
 
-/*---------- Public Routes ----------*/
-router.get('/', productsCtrl.index);
-router.get('/:id', productsCtrl.details);
-router.put('/:id', productsCtrl.update);
-router.delete('/:id', productsCtrl.delete);
-router.post('/', productsCtrl.create);
-
+/* --------Product routes--------------- */
+router.get('/', productCtrl.index);
+router.get('/:id', productCtrl.show);
+router.post('/', productCtrl.create);
+router.delete('/:id', productCtrl.delete);
+router.put('/:id', productCtrl.update);
 
 /*---------- Protected Routes ----------*/
-
-
 
 
 module.exports = router;

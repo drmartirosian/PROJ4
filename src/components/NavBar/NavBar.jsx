@@ -15,12 +15,12 @@ const NavBar = (props) => {
     </div>
     :
     <div>
-      <h3>Please sign in...</h3>
       <Link to='/' className='NavBar-link'>HOME</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to='/login' className='NavBar-link'>LOG IN</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='/signup' className='NavBar-link'>SIGN UP</Link>
+      <h3>Please sign in...</h3>
     </div>;
 
   return (
