@@ -1,5 +1,6 @@
 const Product = require('../../models/product');
-// const User = require('../../models/user');
+const User = require('../../models/user');
+const atob = require("atob");
 
 module.exports = {
   index,
@@ -11,13 +12,31 @@ module.exports = {
 
 async function create(req, res) {
   const product = await Product.create(req.body);
-  try {
-    res.status(200).json(product);
-  }
-  catch (err) {
-    res.status(400).json(err);
-  }
+    try {
+      res.status(200).json(product);
+    }
+    catch (err) {
+      res.status(400).json(err);
+    }
 }
+
+// async function create(req, res) {
+//   const token = req.headers.authorization;
+//   const loggedInUser = JSON.parse(atob(token.split(".")[1]));
+//   const email = loggedInUser.user.email;
+//   const user = await User.findOne({ email: email });
+//   const product = new Product(req.body);
+//   try {
+//     await prouct.userRef.push(user);
+//     await product.save();
+//     await user.save();
+//     res.json({ product });
+//   }
+//   catch (err) {
+//     res.status(400).json(err);
+//   }
+// }
+
 
 async function index(req, res) {
   const products = await Product.find({});

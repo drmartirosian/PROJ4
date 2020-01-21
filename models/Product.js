@@ -6,7 +6,7 @@ var productSchema = new Schema(
         name: { type: String, required: true },
         description: { type: String, default: 'TBD' },
         price: { type: Number, default: 0 },
-        // userRef: [{ type: Schema.Types.ObjectId, ref: "User" }]
+        userRef: { type: Schema.Types.ObjectId, ref: "User" }
     },
     {
         timestamps: true
