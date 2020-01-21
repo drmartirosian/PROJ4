@@ -11,6 +11,7 @@ import AddProductPage from '../../pages/AddProductPage/AddProductPage';
 import ProductDetailPage from '../../pages/ProductDetailPage/ProductDetailPage';
 import EditProductPage from '../../pages/EditProductPage/EditProductPage';
 import './App.css';
+import NavBar from '../../components/NavBar/NavBar';
 
 class App extends Component {
   constructor() {
@@ -73,6 +74,7 @@ class App extends Component {
 
     return (
       <div>
+        <NavBar user={this.state.user} handleLogout={this.handleLogout} />
         <Switch>
           <Route exact path='/' render={() =>
             <HomePage
