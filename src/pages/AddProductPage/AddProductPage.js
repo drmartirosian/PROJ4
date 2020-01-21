@@ -5,7 +5,7 @@ class AddProductPage extends Component {
     invalidForm: true,
     formData: {
       name: '',
-      description: 'Mixed',
+      description: 'TBD',
       price: '0'
     }
   };

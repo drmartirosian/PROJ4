@@ -92,27 +92,27 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
-          <Route exact path='/login' render={({ history }) => 
+          <Route exact path='/login' render={({ history }) =>
             <LoginPage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
-          <Route exact path='/add' render={() => 
+          <Route exact path='/add' render={() =>
             <AddProductPage
               handleAddProduct={this.handleAddProduct}
             />
           } />
-          <Route exact path='/details' render={({location}) => 
+          <Route exact path='/details' render={({location}) =>
             <ProductDetailPage location={location}/>
           } />
-          <Route exact path='/edit' render={({location}) => 
+          <Route exact path='/edit' render={({location}) =>
             <EditProductPage
               handleUpdateProduct={this.handleUpdateProduct}
               location={location}
             />
           } />
-          <Route exact path='/market' render={() => 
+          <Route exact path='/market' render={() =>
             <ProductListPage
               products={this.state.products}
               handleDeleteProduct={this.handleDeleteProduct}
