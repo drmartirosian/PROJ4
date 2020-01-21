@@ -9,9 +9,9 @@ function ProductCard({product}) {
       </div>
       <div className='panel-body'>
         <dl>
-          <dt>Breed</dt>
+          <dt>Description</dt>
           <dd>{product.description}</dd>
-          <dt>Age</dt>
+          <dt>Price</dt>
           <dd>{product.price}</dd>
         </dl>
       </div>
