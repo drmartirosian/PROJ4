@@ -6,10 +6,14 @@ var productsCtrl = require('../../controllers/api/products');
 router.get('/', productsCtrl.index);
 router.get('/:id', productsCtrl.show);
 router.post('/', productsCtrl.create);
+
+/*---------- Protected Routes ----------*/
 router.delete('/:id', productsCtrl.delete);
 router.put('/:id', productsCtrl.update);
 
-/*---------- Protected Routes ----------*/
-
-
 module.exports = router;
+
+function checkAuth(req, res, next) {
+    if (req.user) return next();
+    return res.status(401).json({msg: 'Not Authorized'});
+}
