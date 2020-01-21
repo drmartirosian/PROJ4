@@ -5,7 +5,7 @@ class AddProductPage extends Component {
     invalidForm: true,
     formData: {
       name: '',
-      description: 'TBD',
+      description: 'TBD...',
       price: '0'
     }
   };
@@ -31,7 +31,7 @@ class AddProductPage extends Component {
         <h1>Add Product</h1>
         <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
           <div className="form-group">
-            <label>Product's Name (required)</label>
+            <label>Product's Name:</label>
             <input
               className="form-control"
               name="name"
@@ -41,7 +41,7 @@ class AddProductPage extends Component {
             />
           </div>
           <div className="form-group">
-            <label>Product's Description (required)</label>
+            <label>Product's Description:</label>
             <input
               className="form-control"
               name="description"
@@ -51,7 +51,7 @@ class AddProductPage extends Component {
             />
           </div>
           <div className="form-group">
-            <label>Product's Price</label>
+            <label>Product's Price:</label>
             <input
               className="form-control"
               name="price"

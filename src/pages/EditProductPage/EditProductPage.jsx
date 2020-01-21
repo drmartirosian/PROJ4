@@ -63,7 +63,7 @@ class EditProductPage extends Component {
           >
             SAVE
           </button>&nbsp;&nbsp;
-          <Link to='/'>CANCEL</Link>
+          <Link to='/market'>CANCEL</Link>
         </form>
       </>
     );

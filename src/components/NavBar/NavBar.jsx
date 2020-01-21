@@ -13,8 +13,10 @@ const NavBar = (props) => {
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to='/cart' className='NavBar-link'>CART</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <Link to='/profile' className='NavBar-link'>PROFILE</Link>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to='' className='NavBar-link' onClick={props.handleLogout} >LOG OUT</Link>
-      <h3 className='NavBar-welcome'>Welcome back, {props.user.name}!</h3>
+      <p className='NavBar-welcome'>Welcome back, {props.user.name}!</p>
     </div>
     :
     <div>
@@ -23,7 +25,7 @@ const NavBar = (props) => {
       <Link to='/login' className='NavBar-link'>LOG IN</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='/signup' className='NavBar-link'>SIGN UP</Link>
-      <h3>Please sign in...</h3>
+      <p>Please sign in...</p>
     </div>;
 
   return (
