@@ -1,20 +1,17 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
-class AddProductPage extends Component {
+class EditProductPage extends Component {
   state = {
-    invalidForm: true,
-    formData: {
-      name: '',
-      description: 'Mixed',
-      price: '0'
-    }
+    invalidForm: false,
+    formData: this.props.location.state.product
   };
 
   formRef = React.createRef();
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.handleAddProduct(this.state.formData);
+    this.props.handleUpdateProduct(this.state.formData);
   };
 
   handleChange = e => {
@@ -28,7 +25,7 @@ class AddProductPage extends Component {
   render() {
     return (
       <>
-        <h1>Add Product</h1>
+        <h1>Edit</h1>
         <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Product's Name (required)</label>
@@ -61,15 +58,16 @@ class AddProductPage extends Component {
           </div>
           <button
             type="submit"
-            className="btn"
+            className="btn btn-xs"
             disabled={this.state.invalidForm}
           >
-            ADD
-          </button>
+            SAVE
+          </button>&nbsp;&nbsp;
+          <Link to='/'>CANCEL</Link>
         </form>
       </>
     );
   }
 }
 
-export default AddProductPage;
+export default EditProductPage;

@@ -1,4 +1,4 @@
-const Product = require('../models/Product');
+const Product = require('../../models/product');
 
 module.exports = {
   index,
@@ -14,13 +14,13 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-  const puppy = await Product.findById(req.params.id);
-  res.status(200).json(puppy);
+  const product = await Product.findById(req.params.id);
+  res.status(200).json(product);
 }
 
 async function create(req, res) {
-  const puppy = await Product.create(req.body);
-  res.status(201).json(puppy);
+  const product = await Product.create(req.body);
+  res.status(201).json(product);
 }
 
 async function deleteOne(req, res) {

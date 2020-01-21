@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var productCtrl = require('../../controllers/products');
+var productsCtrl = require('../../controllers/api/products');
 
 /* --------Product routes--------------- */
-router.get('/', productCtrl.index);
-router.get('/:id', productCtrl.show);
-router.post('/', productCtrl.create);
-router.delete('/:id', productCtrl.delete);
-router.put('/:id', productCtrl.update);
+router.get('/', productsCtrl.index);
+router.get('/:id', productsCtrl.show);
+router.post('/', productsCtrl.create);
+router.delete('/:id', productsCtrl.delete);
+router.put('/:id', productsCtrl.update);
 
 /*---------- Protected Routes ----------*/
 
