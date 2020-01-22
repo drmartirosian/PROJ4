@@ -3,7 +3,7 @@ import React from 'react';
 const Advert = (props) => {
     return (
         <div>
-            <img src="https://i.imgur.com/I0OWsjZ.png" alt="PIC"/>
+            <img src="https://i.imgur.com/LLf3fWq.png" alt="advert" />
         </div>
     );
 };
