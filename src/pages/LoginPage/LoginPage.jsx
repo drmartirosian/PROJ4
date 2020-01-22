@@ -4,7 +4,6 @@ import './LoginPage.css';
 import userService from '../../utils/userService';
 
 class LoginPage extends Component {
-  
   state = {
     email: '',
     pw: ''
