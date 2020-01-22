@@ -16,9 +16,14 @@ function ProductCard({product}) {
         </dl>
       </div>
       <div className='panel-footer'>
+
         <div className='btn btn-primary'>
-          <Link style={{color:'white'}} to='/market'>BACK</Link>
+          <Link
+          style={{color:'white'}}
+          to='/market'
+          >BACK</Link>
         </div>
+
       </div>
     </div>
   );

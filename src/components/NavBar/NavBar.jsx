@@ -9,7 +9,7 @@ const NavBar = (props) => {
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link exact to='/market' className='NavBar-link'>Market</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link exact to='/add' className='NavBar-link'>Product+</Link>
+      <Link exact to='/add' className='NavBar-link'>PRODUCT+</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to='/cart' className='NavBar-link'>CART</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

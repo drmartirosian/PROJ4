@@ -36,12 +36,21 @@ class App extends Component {
 
   //-------------------PRODUCT HANDLES-------------------------//
   handleAddProduct = async newProdData => {
+    newProdData.userRef = this.state.user
     const newProd = await productAPI.create(newProdData);
     this.setState(state => ({
       products: [...state.products, newProd]
     }),
     () => this.props.history.push('/market'));
   }
+  // handleAddProduct = async newProdData => {
+  //   console.log(newProdData)
+  //   const newProd = await productAPI.create(newProdData);
+  //   this.setState(state => ({
+  //     products: [...state.products, newProd]
+  //   }),
+  //   () => this.props.history.push('/market'));
+  // }
   handleUpdateProduct = async updatedProdData => {
     const updatedProduct = await productAPI.update(updatedProdData);
     const newProductsArray = this.state.products.map(p =>

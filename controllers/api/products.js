@@ -12,7 +12,7 @@ module.exports = {
 
 async function create(req, res) {
   // req.body.user = req.user
-  req.body.userRef = req.user
+  console.log(req.body)
   const product = await Product.create(req.body);
     try {
       res.status(200).json(product);
