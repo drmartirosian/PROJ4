@@ -1,9 +1,8 @@
 {
-  "name": "react-mastermind",
+  "name": "trescommas",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "atob": "^2.1.2",
     "bcrypt": "^3.0.7",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
