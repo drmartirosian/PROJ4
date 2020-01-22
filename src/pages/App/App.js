@@ -40,8 +40,7 @@ class App extends Component {
     this.setState(state => ({
       products: [...state.products, newProd]
     }),
-    // Using cb to wait for state to update before rerouting
-    () => this.props.history.push('/'));
+    () => this.props.history.push('/market'));
   }
   handleUpdateProduct = async updatedProdData => {
     const updatedProduct = await productAPI.update(updatedProdData);
@@ -50,15 +49,14 @@ class App extends Component {
     );
     this.setState(
       {products: newProductsArray},
-      () => this.props.history.push('/')
+      () => this.props.history.push('/market')
     );
   }
   handleDeleteProduct= async id => {
     await productAPI.deleteOne(id);
     this.setState(state => ({
-      // Yay, filter returns a NEW array
       products: state.products.filter(p => p._id !== id)
-    }), () => this.props.history.push('/'));
+    }), () => this.props.history.push('/market'));
   }
 
   //------------------Lifecycle Methods-------------------------//
@@ -73,56 +71,62 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div >
         <NavBar user={this.state.user} handleLogout={this.handleLogout} />
-        <Switch>
-          <Route exact path='/' render={() =>
-            <HomePage
-              handleLogout={this.handleLogout}
-              user={this.state.user}
-            />
-          }/>
-          <Route exact path='/Cart' render={() =>
-            <CartPage
-              handleLogout={this.handleLogout}
-              user={this.state.user}
-            />
-          }/>
-          <Route exact path='/signup' render={({ history }) => 
-            <SignupPage
-              history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
-            />
-          }/>
-          <Route exact path='/login' render={({ history }) =>
-            <LoginPage
-              history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
-            />
-          }/>
-          <Route exact path='/add' render={() =>
-            <AddProductPage
-              handleAddProduct={this.handleAddProduct}
-              user={this.state.user}
-            />
-          } />
-          <Route exact path='/details' render={({location}) =>
-            <ProductDetailPage location={location}/>
-          } />
-          <Route exact path='/edit' render={({location}) =>
-            <EditProductPage
-              handleUpdateProduct={this.handleUpdateProduct}
-              location={location}
-            />
-          } />
-          <Route exact path='/market' render={() =>
-            <ProductListPage
-              products={this.state.products}
-              handleDeleteProduct={this.handleDeleteProduct}
-            />
-          } />
-        </Switch>
-        {/* <Advert /> */}
+
+
+        <div className="leftpage">
+          <Switch>
+            <Route exact path='/' render={() =>
+              <HomePage
+                handleLogout={this.handleLogout}
+                user={this.state.user}
+              />
+            }/>
+            <Route exact path='/Cart' render={() =>
+              <CartPage
+                handleLogout={this.handleLogout}
+                user={this.state.user}
+              />
+            }/>
+            <Route exact path='/signup' render={({ history }) => 
+              <SignupPage
+                history={history}
+                handleSignupOrLogin={this.handleSignupOrLogin}
+              />
+            }/>
+            <Route exact path='/login' render={({ history }) =>
+              <LoginPage
+                history={history}
+                handleSignupOrLogin={this.handleSignupOrLogin}
+              />
+            }/>
+            <Route exact path='/add' render={() =>
+              <AddProductPage
+                handleAddProduct={this.handleAddProduct}
+                user={this.state.user}
+              />
+            } />
+            <Route exact path='/details' render={({location}) =>
+              <ProductDetailPage location={location}/>
+            } />
+            <Route exact path='/edit' render={({location}) =>
+              <EditProductPage
+                handleUpdateProduct={this.handleUpdateProduct}
+                location={location}
+              />
+            } />
+            <Route exact path='/market' render={() =>
+              <ProductListPage
+                products={this.state.products}
+                handleDeleteProduct={this.handleDeleteProduct}
+              />
+            } />
+          </Switch>
+        </div>
+        <div className="rightpage">
+          {/* <Advert /> */}
+        </div>
       </div>
     );
   }
