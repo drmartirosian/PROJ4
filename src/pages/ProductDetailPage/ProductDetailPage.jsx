@@ -5,7 +5,7 @@ function ProductDetailPage(props) {
   const product = props.location.state.product;
   return (
     <>
-      <h1>Product Details</h1>
+      <h4>Product Details</h4>
       <ProductCard
         key={product._id}
         product={product}

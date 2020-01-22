@@ -10,7 +10,7 @@ function ProductListItem({product, handleDeleteProduct}) {
       </div>
       <div className='panel-footer ProductListItem-action-panel'>
         <Link
-          className='btn'
+          className='btn btn-primary'
           to={{
             pathname: '/details',
             state: {product}
@@ -22,7 +22,7 @@ function ProductListItem({product, handleDeleteProduct}) {
 
         {/*      props.user ? '' : ''      */}
         <Link
-          className='btn'
+          className='btn btn-success'
           to={{
             pathname: '/edit',
             state: {product}
@@ -31,12 +31,22 @@ function ProductListItem({product, handleDeleteProduct}) {
           EDIT
         </Link>
         <button
-          className='btn'
+          className='btn btn-danger'
           onClick={() => handleDeleteProduct(product._id)}
         >
           DELETE
         </button>
 
+
+        <Link
+          className='btn btn-warning'
+          to={{
+            pathname: '/cart',
+            state: {product}
+          }}
+        >
+          Cart+
+        </Link>
 
 
 

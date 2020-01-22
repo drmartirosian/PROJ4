@@ -61,7 +61,7 @@ class AddProductPage extends Component {
           </div>
           <button
             type="submit"
-            className="btn"
+            className="btn btn-success"
             disabled={this.state.invalidForm}
           >
             ADD
