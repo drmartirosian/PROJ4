@@ -58,7 +58,7 @@ class EditProductPage extends Component {
           </div>
           <button
             type="submit"
-            className="btn btn-xs"
+            className="btn btn-success "
             disabled={this.state.invalidForm}
           >
             SAVE

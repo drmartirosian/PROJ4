@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
+// import './NavBar.css';
+import '../../pages/App/App.css';
+
+
 
 const NavBar = (props) => {
   let nav = props.user ?
     <div >
       <Link to='/' className='NavBar-link'>HOME</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link exact to='/market' className='NavBar-link'>Market</Link>
+      <Link exact to='/market' className='NavBar-link'>MARKET</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link exact to='/add' className='NavBar-link'>PRODUCT+</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

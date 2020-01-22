@@ -4,6 +4,9 @@ import './ProductListItem.css';
 
 function ProductListItem({product, handleDeleteProduct}) {
   return (
+
+
+
     <div className='panel panel-default'>
       <div className="panel-heading">
         <h3 className='panel-title'>{product.name}</h3>
@@ -20,7 +23,7 @@ function ProductListItem({product, handleDeleteProduct}) {
         </Link>
 
 
-        {/*      props.user ? '' : ''      */}
+        {/* {req.user ? : } */}
         <Link
           className='btn btn-success'
           to={{
@@ -52,6 +55,8 @@ function ProductListItem({product, handleDeleteProduct}) {
 
       </div>
     </div>
+
+
   );
 }
 

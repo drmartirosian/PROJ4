@@ -10,9 +10,9 @@ import ProductListPage from '../../pages/ProductListPage/ProductListPage';
 import AddProductPage from '../../pages/AddProductPage/AddProductPage';
 import ProductDetailPage from '../../pages/ProductDetailPage/ProductDetailPage';
 import EditProductPage from '../../pages/EditProductPage/EditProductPage';
-import './App.css';
 import NavBar from '../../components/NavBar/NavBar';
 import Advert from '../../components/Advert/Advert';
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -43,14 +43,6 @@ class App extends Component {
     }),
     () => this.props.history.push('/market'));
   }
-  // handleAddProduct = async newProdData => {
-  //   console.log(newProdData)
-  //   const newProd = await productAPI.create(newProdData);
-  //   this.setState(state => ({
-  //     products: [...state.products, newProd]
-  //   }),
-  //   () => this.props.history.push('/market'));
-  // }
   handleUpdateProduct = async updatedProdData => {
     const updatedProduct = await productAPI.update(updatedProdData);
     const newProductsArray = this.state.products.map(p =>
@@ -80,8 +72,8 @@ class App extends Component {
 
   render() {
     return (
-      <div >
-        <NavBar user={this.state.user} handleLogout={this.handleLogout} />
+      <div className="wholepage">
+        <NavBar className="toppage" user={this.state.user} handleLogout={this.handleLogout} />
 
 
         <div className="leftpage">
@@ -127,15 +119,19 @@ class App extends Component {
             } />
             <Route exact path='/market' render={() =>
               <ProductListPage
+                user={this.state.user}
                 products={this.state.products}
                 handleDeleteProduct={this.handleDeleteProduct}
               />
             } />
           </Switch>
         </div>
+
+
         <div className="rightpage">
-          {/* <Advert /> */}
+          <Advert />
         </div>
+
       </div>
     );
   }
