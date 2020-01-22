@@ -12,6 +12,7 @@ import ProductDetailPage from '../../pages/ProductDetailPage/ProductDetailPage';
 import EditProductPage from '../../pages/EditProductPage/EditProductPage';
 import './App.css';
 import NavBar from '../../components/NavBar/NavBar';
+import Advert from '../../components/Advert/Advert';
 
 class App extends Component {
   constructor() {
@@ -24,7 +25,7 @@ class App extends Component {
   }
 
 
-  //AUTH HANDLES
+  //----------------------AUTH HANDLES-------------------------//
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
@@ -33,7 +34,7 @@ class App extends Component {
     this.setState({user: userService.getUser()});
   }
 
-  //PRODUCT HANDLES
+  //-------------------PRODUCT HANDLES-------------------------//
   handleAddProduct = async newProdData => {
     const newProd = await productAPI.create(newProdData);
     this.setState(state => ({
@@ -44,7 +45,7 @@ class App extends Component {
   }
   handleUpdateProduct = async updatedProdData => {
     const updatedProduct = await productAPI.update(updatedProdData);
-    const newProductsArray = this.state.products.map(p => 
+    const newProductsArray = this.state.products.map(p =>
       p._id === updatedProduct._id ? updatedProduct : p
     );
     this.setState(
@@ -60,7 +61,7 @@ class App extends Component {
     }), () => this.props.history.push('/'));
   }
 
-  /*--- Lifecycle Methods ---*/
+  //------------------Lifecycle Methods-------------------------//
   async componentDidMount() {
     const products = await productAPI.getAll();
     this.setState({products});
@@ -71,9 +72,8 @@ class App extends Component {
 
 
   render() {
-
     return (
-      <div>
+      <div className="container">
         <NavBar user={this.state.user} handleLogout={this.handleLogout} />
         <Switch>
           <Route exact path='/' render={() =>
@@ -103,6 +103,7 @@ class App extends Component {
           <Route exact path='/add' render={() =>
             <AddProductPage
               handleAddProduct={this.handleAddProduct}
+              user={this.state.user}
             />
           } />
           <Route exact path='/details' render={({location}) =>
@@ -121,6 +122,7 @@ class App extends Component {
             />
           } />
         </Switch>
+        {/* <Advert /> */}
       </div>
     );
   }

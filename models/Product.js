@@ -4,9 +4,9 @@ var Schema = mongoose.Schema;
 var productSchema = new Schema(
     {
         name: { type: String, required: true },
-        description: { type: String, default: 'TBD' },
-        price: { type: Number, default: 0 },
-        userRef: [{ type: Schema.Types.ObjectId, ref: "User" }]
+        description: { type: String },
+        price: { type: Number },
+        userRef: { type: Object }
     },
     {
         timestamps: true

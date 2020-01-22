@@ -6,7 +6,7 @@ class AddProductPage extends Component {
     formData: {
       name: '',
       description: 'TBD...',
-      price: '0'
+      price: '0',
     }
   };
 
@@ -27,9 +27,9 @@ class AddProductPage extends Component {
 
   render() {
     return (
-      <>
-        <h1>Add Product</h1>
-        <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
+      <div className="page">
+        <h4>Add Product</h4>
+        <form style={{ width: '60%' }} ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit} >
           <div className="form-group">
             <label>Product's Name:</label>
             <input
@@ -67,7 +67,7 @@ class AddProductPage extends Component {
             ADD
           </button>
         </form>
-      </>
+      </div>
     );
   }
 }

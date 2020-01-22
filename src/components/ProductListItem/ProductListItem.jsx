@@ -18,6 +18,9 @@ function ProductListItem({product, handleDeleteProduct}) {
         >
           DETAILS
         </Link>
+
+
+        {/*      props.user ? '' : ''      */}
         <Link
           className='btn'
           to={{
@@ -33,6 +36,10 @@ function ProductListItem({product, handleDeleteProduct}) {
         >
           DELETE
         </button>
+
+
+
+
       </div>
     </div>
   );

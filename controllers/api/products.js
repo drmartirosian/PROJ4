@@ -11,6 +11,8 @@ module.exports = {
 };
 
 async function create(req, res) {
+  // req.body.user = req.user
+  // req.body.userRef = req.user
   const product = await Product.create(req.body);
     try {
       res.status(200).json(product);
@@ -19,7 +21,6 @@ async function create(req, res) {
       res.status(400).json(err);
     }
 }
-
 // async function create(req, res) {
 //   const token = req.headers.authorization;
 //   const loggedInUser = JSON.parse(atob(token.split(".")[1]));
