@@ -1,6 +1,5 @@
 const Product = require('../../models/product');
 const User = require('../../models/user');
-const atob = require("atob");
 
 module.exports = {
   index,
